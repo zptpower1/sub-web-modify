@@ -1055,9 +1055,6 @@ export default {
         }
       }
 
-      console.log("请求 URL:", duan);
-      console.log("请求头:", headers);
-      console.dir(postData || data); // 使用 console.dir() 打印更详细的信息
       this.$axios
         .post(duan, postData || data, { // 使用 postData 或 data，取决于 shortType
           headers: headers
@@ -1068,7 +1065,7 @@ export default {
           if (this.form.shortType === "v9.gg") {
             // 处理 v9.gg 的返回值
             if (res.data.status === 200 && res.data.key !== "") {
-              this.customShortSubUrl = "https://v9.gg/" + res.data.key; // 构建短链 URL
+              this.customShortSubUrl = "https://v9.gg/"; // 构建短链 URL
               this.$copyText("https://v9.gg/" + res.data.key); // 复制短链 URL
               this.$message.success(
                 "短链接已复制到剪贴板（IOS设备和Safari浏览器不支持自动复制API，需手动点击复制按钮）"
