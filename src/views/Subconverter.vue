@@ -1055,52 +1055,6 @@ export default {
         }
       }
 
-      function makeShortUrlV9GG(longUrl, callback) {
-        const url = "https://v9.gg";
-        const data = JSON.stringify({
-          cmd: "add",
-          password: "bvj0kgw4vng",
-          keyPhrase: "",
-          url: longUrl
-        });
-
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST", url, true);
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        xhr.onload = function () {
-          if (xhr.status >= 200 && xhr.status < 300) {
-            try {
-              const response = JSON.parse(xhr.responseText);
-              if (response.status === 200 && response.key !== "") {
-                const shortUrl = "https://v9.gg/" + response.key;
-                callback(null, shortUrl); // 成功，返回短链
-              } else {
-                callback(response.error || "Unknown error", null); // 失败，返回错误信息
-              }
-            } catch (error) {
-              callback("Error parsing JSON response: " + error, null); // JSON 解析错误
-            }
-          } else {
-            callback("Request failed with status: " + xhr.status, null); // 请求失败
-          }
-        };
-
-        xhr.onerror = function () {
-          callback("Network error", null); // 网络错误
-        };
-
-        xhr.send(data);
-      }
-
-      // makeShortUrlV9GG("sssss", function (error, shortUrl) {
-      //   if (error) {
-      //     console.error("Error getting short URL:", error);
-      //   } else {
-      //     console.log("Short URL:", shortUrl);
-      //   }
-      // });
-
       console.log("请求 URL:", duan);
       console.log("请求头:", headers);
       console.dir(postData || data); // 使用 console.dir() 打印更详细的信息
@@ -1109,6 +1063,8 @@ export default {
           headers: headers
         })
         .then(res => {
+          console.log("完整 response.data:", res.data); // 打印整个 response.data
+
           if (this.form.shortType === "v9.gg") {
             // 处理 v9.gg 的返回值
             if (res.data.status === 200 && res.data.key !== "") {
