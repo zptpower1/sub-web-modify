@@ -1045,7 +1045,7 @@ export default {
           "cmd": "add",
           "password": "bvj0kgw4vng",
           "keyPhrase": "",
-          "url": btoa(this.customSubUrl) // 仍然使用 btoa 编码 URL
+          "url": this.customSubUrl
         };
       }
       else {
