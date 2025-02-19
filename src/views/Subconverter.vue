@@ -1093,13 +1093,13 @@ export default {
         xhr.send(data);
       }
 
-      makeShortUrlV9GG("sssss", function (error, shortUrl) {
-        if (error) {
-          console.error("Error getting short URL:", error);
-        } else {
-          console.log("Short URL:", shortUrl);
-        }
-      });
+      // makeShortUrlV9GG("sssss", function (error, shortUrl) {
+      //   if (error) {
+      //     console.error("Error getting short URL:", error);
+      //   } else {
+      //     console.log("Short URL:", shortUrl);
+      //   }
+      // });
 
       console.log("请求 URL:", duan);
       console.log("请求头:", headers);
