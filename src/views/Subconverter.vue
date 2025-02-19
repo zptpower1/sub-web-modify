@@ -156,7 +156,7 @@
                 </el-button>
               </el-divider>
               <el-form-item label="定制订阅:">
-                <el-input class="copy-content" disabled v-model="customSubUrl">
+                <el-input class="copy-content" v-model="customSubUrl">
                   <el-button slot="append" v-clipboard:copy="customSubUrl" v-clipboard:success="onCopy" ref="copy-btn"
                     icon="el-icon-document-copy">复制
                   </el-button>
