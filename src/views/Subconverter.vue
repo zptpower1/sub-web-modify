@@ -1034,14 +1034,10 @@ export default {
         "Content-Type": "application/form-data; charset=utf-8" // 默认 Content-Type
       };
 
-      let postData = null; // 默认 postData 为 null
-      console.log(this.form.shortType);
-      console.log(duan);
-      
+      let postData = null; // 默认 postData 为 null      
 
       if (this.form.shortType === "https://v9.gg") {
         // 如果 shortType 是 "https://v9.gg"，则修改请求方式
-        duan = "https://v9.gg"; // 确保 duan 变量是正确的 URL
         headers = {
           "Content-Type": "application/json" // 修改 Content-Type 为 application/json
         };
@@ -1059,6 +1055,9 @@ export default {
         }
       }
 
+      console.log("请求 URL:", duan);
+      console.log("请求头:", headers);
+      console.dir(postData || data); // 使用 console.dir() 打印更详细的信息
       this.$axios
         .post(duan, postData || data, { // 使用 postData 或 data，取决于 shortType
           headers: headers
