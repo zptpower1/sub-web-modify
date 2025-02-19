@@ -1035,6 +1035,9 @@ export default {
       };
 
       let postData = null; // 默认 postData 为 null
+      console.log(this.form.shortType);
+      console.log(duan);
+      
 
       if (this.form.shortType === "https://v9.gg") {
         // 如果 shortType 是 "https://v9.gg"，则修改请求方式
