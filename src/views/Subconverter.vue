@@ -760,7 +760,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: this.getUrlParam() == "" ? "https://sub.imeibeauty.com" : this.getUrlParam(),
+        customBackend: this.getUrlParam() == "" ? "https://subconvert.v9.gg" : this.getUrlParam(),
         shortType: "https://v9.gg",
         remoteConfig: "https://raw.githubusercontent.com/zptpower1/nash/myini/mymaying.ini",
         excludeRemarks: "",
