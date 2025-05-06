@@ -349,7 +349,7 @@ export default {
           "sub作者&lhie1提供": "https://api.dler.io",
         },
         backendOptions: [
-          { value: "https://sub.imeibeauty.com" },
+          { value: "https://subconvert.v9.gg" },
           { value: "https://url.v1.mk" },
           { value: "https://sub.d1.mk" },
           { value: "https://api.tsutsu.one" },
